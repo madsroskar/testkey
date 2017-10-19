@@ -1,0 +1,56 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+#root {
+    width: 80%;
+    margin: auto;
+}
+
+#current-pressed-keys {
+    display: flex;
+    flex-direction: row;
+    height: 8em;
+    margin: 3em auto;
+    justify-content: left;
+}
+#current-pressed-keys .key-element {
+    display: block;
+    margin: 0 1em;
+    align-self: center;
+    width: 15%;
+    border: 3px solid black;
+    padding: 0.3em;
+    border-radius: 4px;
+}
+
+.key-element .key {
+    font-size: 2em;
+    text-align: center;
+}
+
+span.right {
+    float: right;
+}
+
+.history-item {
+    margin: 0;
+    padding: 0.5em;
+}
+
+.history-item:nth-child(even) {
+    background: #C6C6C6;
+}
+
+.history-item div {
+    display: inline-block;
+    width: 30%;
+    height: 25px;
+    -webkit-transition: height 1s;
+}
+
+.identifier {
+    font-weight: bold;
+}
