@@ -1,6 +1,5 @@
 'use strict';
 (function() {
-
 	// https://tc39.github.io/ecma262/#sec-array.prototype.find
 	if (!Array.prototype.find) {
 		Object.defineProperty(Array.prototype, 'find', {
@@ -80,7 +79,7 @@
 	};
 
 	function createHistoryElement(key) {
-		return '<div class="history-item"><div class="key"><span class="identifier">Key: </span>' + key.key + '</div><div class="code"><span class="identifier">Code: </span> ' + key.code + '</div><div class="key-code"><span class="identifier">Key code: </span>' + key.keyCode + '</div>\n</div>\n    ';
+		return '<div class="history-item"><div class="key">' + key.key + '</div><div class="code">' + key.code + '</div><div class="key-code">' + key.keyCode + '</div></div>';
 	};
 
 	function addKeyToHistory(key) {

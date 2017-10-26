@@ -1,23 +1,33 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Testkey.online</title>
-    <script src="index.js"></script>
-    <link rel="stylesheet" type="text/css" href="index.css"/>
-    <meta name="description" content="Test the keys of your keyboard online">
-    <meta name="title" content="Testkey Online">
-</head>
-<body>
-<div id="root">
-    <div id="current-pressed-keys"></div>
-        <h3>History</h3>
-    <div id="history">
-    </div>
-    <input type="text" style="display: none;" autofocus="autofocus" />
-</div>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Testkey.online</title>
+		<link rel="stylesheet" type="text/css" href="index.css"/>
+		<meta name="description" content="Test the keys of your keyboard online">
+		<meta name="title" content="Testkey Online">
+	</head>
+	<body>
+		<div class="root">
+			<div id="current-pressed-keys"></div>
+		</div>    	
+		
+		<div id="header">
+			<div class="history-item" id="history-header">
+				<h3>History</h3>
+				<div class="key">Key</div>
+				<div class="code">Code</div>
+				<div class="key-code">Key code</div>
+			</div>
+		</div>
+
+		<div class="root">
+			<div id="history"></div>
+		</div> 
+		<script src="index.js"></script>
+		<script src="sticky.min.js"></script>
+	</body>
 </html>
