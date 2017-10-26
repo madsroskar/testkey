@@ -11,10 +11,20 @@
 		<meta name="title" content="Testkey Online">
 	</head>
 	<body>
+<a id="toggle-about" href="javascript:toggleAbout(this)">What is this?</a>
+		<div id="about">
+			<div id="content">
+				<h1>Testkey.online</h1>
+				<p>Testkey.online is a very simple application made to see which keys are currently being pressed on the keyboard of the user</p>
+				<p>The reason this site exists is that I had rebound a key on my keyboard, and wanted to make sure it was working properly, and the easiest way I could think of was to type an URL, and just hit the key.</p>
+				<p>The other sites like this one I could find were either on urls I couldn't easily remember, or they didn't work properly with my nordic keyboard, so I decided to make this one.</p>
+				<p>This site isn't pretty, and there are probably issues I haven't noticed, or features that could be implemented to make it more useful. If you can think of anyone, feel free to create an issue on <a href="https://github.com/madsroskar/testkey" target="_blank">Github</a>, or just fork it and submit a pull request. It's all plain javascript, and CSS. :)</p>
+			</div>
+		</div> 
 		<div class="root">
 			<div id="current-pressed-keys"></div>
 		</div>    	
-		
+
 		<div id="header">
 			<div class="history-item" id="history-header">
 				<h3>History</h3>
@@ -29,5 +39,12 @@
 		</div> 
 		<script src="index.js"></script>
 		<script src="sticky.min.js"></script>
+		<script type="text/javascript">
+        	var about = document.getElementById('about');
+			function toggleAbout(e) {
+            	about.classList.toggle("visible");
+				e.preventDefault();
+			}
+		</script>
 	</body>
 </html>
