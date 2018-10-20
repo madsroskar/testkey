@@ -1,3 +1,20 @@
+/* I added media query to hide content
+if device is smaller than 1025px(set breakpoint)
+*/ 
+
+/* If device  */
+@media (min-width:1025px){
+	div.mobile{
+		visibility:hidden;
+	}
+}
+
+@media (max-width:1025px){
+	div.desktop{
+		visibility:hidden;
+	}
+}
+
 html, body {
 	padding: 0;
 	margin: 0;
@@ -116,7 +133,17 @@ text-align: left;
 text-align: right;
 }
  */
-	.identifier {
-		float: left;
-		font-weight: bold;
-	}
+.identifier {
+	float: left;
+	font-weight: bold;
+}
+
+div.mobile{
+	text-align:center;
+}
+
+
+
+
+
+	
