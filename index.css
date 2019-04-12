@@ -107,16 +107,8 @@ span.right {
 	height: 25px;
 	-webkit-transition: height 1s;
 }
-/*
-.history-item div:nth-child(1) {
-text-align: left;
-}
 
-.history-item div:nth-child(3) {
-text-align: right;
+.identifier {
+	float: left;
+	font-weight: bold;
 }
- */
-	.identifier {
-		float: left;
-		font-weight: bold;
-	}
