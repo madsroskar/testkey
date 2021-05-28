@@ -1,0 +1,34 @@
+{
+    "name": "testkey.online",
+    "version": "1.0.0",
+    "description": "Website to test your keyboard input",
+    "main": "index.js",
+    "repository": "git@github.com:madsroskar/testkey.git",
+    "author": "Mads Røskar <madshvero@gmail.com>",
+    "license": "MIT",
+    "private": true,
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^4.25.0",
+        "@typescript-eslint/parser": "^4.25.0",
+        "eslint": "^7.27.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^3.4.0",
+        "husky": "^6.0.0",
+        "prettier": "^2.3.0",
+        "typescript": "^4.3.2"
+    },
+    "scripts": {
+        "build": "tsc",
+        "fix": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,ts,tsx}": [
+            "eslint --fix"
+        ]
+    }
+}
