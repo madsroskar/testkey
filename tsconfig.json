@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
-    "outDir": ".",
-    "target": "es6"
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "es6",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "target": "es6",
+    "jsx": "preserve"
   },
   "include": ["./src/**/*"],
   "exclude": ["./node_modules"]

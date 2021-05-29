@@ -1,13 +1,14 @@
+import JSX from './jsx'; // eslint-disable-line
+import { addStateEvents } from './state';
 (function () {
     let currentlyPressedKeys = [];
     document.addEventListener('keydown', function (e) {
         if (!currentlyPressedKeys.find(function (key) {
-            return key.key === e.key;
+            return key === e.key;
         })) {
-            currentlyPressedKeys.push(e);
+            currentlyPressedKeys.push(e.key);
             addKeyToHistory(e.key);
         }
-        render();
         if (e.key == ' ') {
             e.preventDefault();
             return 0;
@@ -15,27 +16,42 @@
     });
     document.addEventListener('keyup', function (e) {
         currentlyPressedKeys = currentlyPressedKeys.filter(function (key) {
-            return key.key !== e.key;
+            return key !== e.key;
         });
-        render();
     });
     window.addEventListener('blur', function () {
         currentlyPressedKeys = [];
-        render();
     });
-    function createKeyElement(key) {
-        return '<div class="key-element"><div class="key">' + key + '</div>\n</div>\n';
-    }
     function createHistoryElement(key) {
         return '<div class="history-item"><div class="key">' + key + '</div></div>';
     }
     function addKeyToHistory(key) {
-        var historyElement = createHistoryElement(key);
-        var historyContainer = document.getElementById('history');
+        const historyElement = createHistoryElement(key);
+        const historyContainer = document.getElementById('history');
         historyContainer.innerHTML = historyElement + historyContainer.innerHTML;
     }
-    function render() {
-        document.getElementById('current-pressed-keys').innerHTML = currentlyPressedKeys.map(createKeyElement).join('');
-    }
-    console.log('hello');
 })();
+const state = [];
+const render = (state) => (document.getElementById('current-pressed-keys').innerHTML = JSX.createElement(CurrentlyPressedKeys, { keys: state }));
+addStateEvents(state, render);
+const addKey = (key, state) => state.push(key) > -1 && state;
+const removeKey = (key, state) => state.filter((k) => k !== key);
+const actions = {
+    add: addKey,
+    remove: removeKey,
+};
+const dispatch = (action) => actions[action.action](action.key, state);
+const CurrentlyPressedKeys = ({ keys }) => (JSX.createElement(JSX.Fragment, null, keys.map((key) => (JSX.createElement(Key, { label: key })))));
+const Key = ({ label }) => JSX.createElement("div", { class: "key" }, label);
+document.onkeydown = (ev) => {
+    dispatch({
+        action: 'add',
+        key: ev.key,
+    });
+};
+document.onkeydown = (ev) => {
+    dispatch({
+        action: 'remove',
+        key: ev.key,
+    });
+};

@@ -47,7 +47,7 @@ html, body {
 	-moz-transition: height 0.5s ease;
 	-ms-transition: height 0.5s ease;
 	-o-transition: height 0.5s ease;
-	transition: height 0.5s ease; 
+	transition: height 0.5s ease;
 }
 
 #about.visible {
@@ -82,12 +82,6 @@ span.right {
 	margin-top: 0;
 }
 
-.history-item {
-	width: 80%;
-	margin: 0 auto;
-	padding: 0.5em;
-	white-space: nowrap;
-}
 
 .history-item h3:last-child {
 	display: none;
@@ -99,7 +93,7 @@ span.right {
 
 .history-item:nth-child(odd) {
 	background: #FEFEFE;
-} 
+}
 
 .history-item div {
 	display: inline-block;
