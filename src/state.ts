@@ -1,32 +1,37 @@
 export type Key = string;
 export type Keys = Array<Key>;
-export type State = Keys;
-const addKey = (key: Key, state: State): State => {
-  state.push(key);
-  return state;
+export type State = { keys: Keys; aboutOpen: boolean };
+
+const addKey = (value: Key, state: State): State => {
+  console.log('addkey called', value, state);
+  return { ...state, keys: [...state.keys, value] };
 };
-const removeKey = (key: Key, state: State): State => state.filter((k: Key) => k !== key);
-const actions = {
+const removeKey = (value: Key, state: State): State => ({ ...state, keys: state.keys.filter((k: Key) => k !== value) });
+const toggleAboutOpen = (value: boolean, state: State) => ({ ...state, aboutOpen: value });
+const actions: { [key: string]: (value: Key | boolean, state: State) => State } = {
   add: addKey,
   remove: removeKey,
-} as const;
+  toggleAboutOpen,
+};
 export type ActionType = keyof typeof actions;
-export type Action = { key: Key; action: ActionType };
+export type Action = { value: Key | boolean; action: ActionType };
 
 export const addStateEvents = (state: State, fn: (state: State) => unknown): void => {
-  state.push = (...ks: Key[]): number => {
+  state.keys.push = (...ks: Key[]): number => {
     const length = Array.prototype.push.call(state, ...ks);
     fn(state);
     return length;
   };
 };
 
-
 export const dispatch =
   (state: State) =>
-    (action: Action): State =>
-      actions[action.action](action.key, state);
+  // eslint-disable-next-line indent
+  (action: Action): State =>
+    // eslint-disable-next-line indent
+    actions[action.action](action.value as Key | boolean | string, state);
 
-export const createState = (): State => {
-  return [];
+export const createState = (overrides?: Partial<State>): State => {
+  const initialProps: State = { keys: [], aboutOpen: false };
+  return { ...initialProps, ...overrides };
 };

@@ -954,10 +954,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@itsjavi/jsx-runtime@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@itsjavi/jsx-runtime/-/jsx-runtime-0.0.2.tgz#c95491677d92664e8e1f35c66863b88ba3b4bfd0"
-  integrity sha512-K9RhR6Qs63C3jGEgy0sdoCgEI0Ph28lNuNPtt1CXV0B2coXh9Skbx9tUVLl9+dgBWltSI9acPI8bM/E50zKZHw==
+"@itsjavi/jsx-runtime@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@itsjavi/jsx-runtime/-/jsx-runtime-0.1.0.tgz#856598b58b5c8c388d02f1b458fb84e1d112146b"
+  integrity sha512-L/XyjKOkJhVakNLCIQNk6v3yjRSciV97jWaoj8e8tNf+0TyxrzDSY27RZkndN6YCxSr0LRJHMo9PEcVP8kU9pA==
 
 "@nicolo-ribaudo/chokidar-2@2.1.8-no-fsevents":
   version "2.1.8-no-fsevents"

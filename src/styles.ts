@@ -29,6 +29,11 @@ const styles: Styles = {
     padding: '0.5em',
     whiteSpace: 'nowrap',
   },
+  about: {
+    height: 0,
+    overflow: 'hidden',
+    transition: 'height 0.5s ease',
+  },
 };
 const Stylez = jss.createStyleSheet(styles).attach();
 console.log({ Styles: Stylez.classes });
