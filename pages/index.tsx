@@ -106,8 +106,8 @@ const KeyBox = ({ k }: KeyBoxProps) => (
       <Text>{k.code}</Text>
       <HStack>
           {k.ctrl && (<Badge colorScheme='red'>CTRL</Badge>)}
-          {k.ctrl && (<Badge colorScheme='green'>Shift</Badge>)}
-          {k.ctrl && (<Badge colorScheme='yellow'>Meta</Badge>)}
+          {k.shift && (<Badge colorScheme='green'>Shift</Badge>)}
+          {k.meta && (<Badge colorScheme='yellow'>Meta</Badge>)}
       </HStack>
   </Box>
 )
