@@ -1,7 +1,7 @@
 import { Badge, Box, Center, Heading, HStack, Text } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 
-const DEBUG = true;
+const DEBUG = process.env.NODE_ENV !== "production" && (process.env.DEBUG === "true" || false);
 
 const dummyKeys = [
   {
