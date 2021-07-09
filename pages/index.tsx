@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 const DEBUG = process.env.NODE_ENV !== "production" && (process.env.DEBUG === "true" || false);
 
 const dummyKeys = [
-  {
+    {
     "code": "ControlRight",
     "key": "Control",
     "ctrl": true,
@@ -98,17 +98,17 @@ type KeyBoxProps = { k: KeyType }
 
 const KeyBox = ({ k }: KeyBoxProps) => (
   <Box
-      borderWidth={2}
-      border='solid black'
-      borderRadius='10px'
+    borderWidth={2}
+    border='solid black'
+    borderRadius='10px'
   >
-      <Heading size='xl'>{k.key}</Heading>
-      <Text>{k.code}</Text>
-      <HStack>
-          {k.ctrl && (<Badge colorScheme='red'>CTRL</Badge>)}
-          {k.shift && (<Badge colorScheme='green'>Shift</Badge>)}
-          {k.meta && (<Badge colorScheme='yellow'>Meta</Badge>)}
-      </HStack>
+    <Heading size='xl'>{k.key}</Heading>
+    <Text>{k.code}</Text>
+    <HStack>
+      {k.ctrl && (<Badge colorScheme='red'>CTRL</Badge>)}
+      {k.shift && (<Badge colorScheme='green'>Shift</Badge>)}
+      {k.meta && (<Badge colorScheme='yellow'>Meta</Badge>)}
+    </HStack>
   </Box>
 )
 
@@ -127,9 +127,9 @@ const useKeyEvents = () => {
     }
 
     const resetKeys = () => {
-        if (!DEBUG) {
-          setPressedKeys([])
-        }
+      if (!DEBUG) {
+        setPressedKeys([])
+      }
     }
 
     window.addEventListener('keydown', onKeyDown)
@@ -148,7 +148,7 @@ const useKeyEvents = () => {
 export default function Home() {
   const { pressedKeys } = useKeyEvents();
   return (
-    <Center>
+    <Center width='100vw' height='100vh'>
       <HStack>
         {pressedKeys.map((k, i) => (<KeyBox key={i} k={k} />))}
       </HStack>
