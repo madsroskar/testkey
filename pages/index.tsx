@@ -1,7 +1,7 @@
 import { Badge, Box, Center, Link, Heading, Stack, HStack, Text } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 
-const DEBUG = process.env.NODE_ENV !== "production" && (process.env.DEBUG === "true" || false);
+const DEBUG = process.env.NODE_ENV !== "production" && (process.env.NEXT_PUBLIC_DEBUG === "true" || false);
 
 const dummyKeys = [
   {
@@ -145,10 +145,13 @@ const useKeyEvents = () => {
   return { pressedKeys };
 }
 
+const DebugWarning = () => DEBUG ? (<Text position='fixed' top={0} left={0} color='red.400'>Debug is active</Text>) : null;
+
 export default function Home() {
   const { pressedKeys } = useKeyEvents();
   return (
     <>
+      <DebugWarning />
       <Center width='100vw' mt='10vh' height='80vh'>
         <HStack>
           {pressedKeys.map((k, i) => (<KeyBox key={i} k={k} />))}

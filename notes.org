@@ -3,6 +3,7 @@
 * Todo
 ** TODO Move the application into `/app`
 ** TODO Change the buttons container to Flex rather than Stack
+** DONE Fix debug data not being shown
 ** TODO Add a small "about this" thingy
 ** TODO Figure something out for mobile
 *** Ideas
@@ -11,3 +12,4 @@
 I don't really know if this is helpful at all, or at least in a similar way
 to how I use it on desktop. I guess there's a case for being able to try out
 swipe and such features, but i'm not sure that's worth :D
+** TODO Fix `react-dom.development.js?61bb:67 Warning: Did not expect server HTML to contain a <div> in <div>.`
