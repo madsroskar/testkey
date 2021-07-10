@@ -1,10 +1,10 @@
-import { Badge, Box, Center, Heading, HStack, Text } from "@chakra-ui/react";
+import { Badge, Box, Center, Link, Heading, Stack, HStack, Text } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 
 const DEBUG = process.env.NODE_ENV !== "production" && (process.env.DEBUG === "true" || false);
 
 const dummyKeys = [
-    {
+  {
     "code": "ControlRight",
     "key": "Control",
     "ctrl": true,
@@ -148,10 +148,25 @@ const useKeyEvents = () => {
 export default function Home() {
   const { pressedKeys } = useKeyEvents();
   return (
-    <Center width='100vw' height='100vh'>
-      <HStack>
-        {pressedKeys.map((k, i) => (<KeyBox key={i} k={k} />))}
-      </HStack>
-    </Center>
+    <>
+      <Center width='100vw' mt='10vh' height='80vh'>
+        <HStack>
+          {pressedKeys.map((k, i) => (<KeyBox key={i} k={k} />))}
+        </HStack>
+      </Center>
+      <Stack
+        isInline
+        fontSize="16"
+        textAlign="center"
+        align="center"
+        justify="center"
+        color="gray.500"
+      >
+        <Text>Fork this on </Text>
+        <Link href="https://github.com/madsroskar/testkey" color='yellow' isExternal>
+          GitHub
+        </Link>
+      </Stack>
+    </>
   )
 }
