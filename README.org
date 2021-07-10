@@ -1,0 +1,20 @@
+#+TITLE:     Testkey.online
+#+SUBTITLE:  An app to check which key codes are emitted
+#+AUTHOR:    Mads Røskar
+#+EMAIL:     (concat "madshvero" at-sign "gmail.com")
+#+DESCRIPTION: An app to check which key codes are emitted
+#+KEYWORDS:  keyboard
+#+LANGUAGE:  en
+#+OPTIONS:   toc:nil
+
+* Testkey
+#+TOC: headlines 2
+** Requirements
+- yarn
+** Setup
+- Install dependencies
+  =$ yarn=
+** Run
+=yarn dev=
+** Env variables
+- =NEXT_PUBLIC_DEBUG= If set to =true= will add a set of keys to the state by default.
